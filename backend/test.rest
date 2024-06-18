@@ -1,14 +1,16 @@
+@baseUrl = http://localhost:5000/api/users
+
 ### User Auth
-POST http://localhost:5000/api/users/auth HTTP/1.1
+POST {{baseUrl}}/auth HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "email": "toto@email.to",
+    "password": "toto"
 }
 
 ### Register User
-POST http://localhost:5000/api/users/ HTTP/1.1
+POST {{baseUrl}}/ HTTP/1.1
 content-type: application/json
 
 {
@@ -18,28 +20,22 @@ content-type: application/json
 }
 
 ### Logout User
-POST http://localhost:5000/api/users/logout HTTP/1.1
+POST {{baseUrl}}/logout HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
 }
 
 ### Get User Profile
-GET http://localhost:5000/api/users/profile HTTP/1.1
+GET {{baseUrl}}/profile HTTP/1.1
 content-type: application/json
 
-{
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
+{}
 
 ### Update User Profile
-PUT http://localhost:5000/api/users/profile HTTP/1.1
+PUT {{baseUrl}}/profile HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "password": "totoro"
 }
